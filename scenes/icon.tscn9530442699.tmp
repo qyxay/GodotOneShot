@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://oy187gircddf"]
+
+[ext_resource type="Script" uid="uid://cbsxq23nbw3lf" path="res://gd/icon.gd" id="1_3dybq"]
+[ext_resource type="Texture2D" uid="uid://fh85ih7ffxtm" path="res://content/icon_back_light.png" id="2_q2gxc"]
+[ext_resource type="Texture2D" uid="uid://cvvs366nqtvbq" path="res://content/icons/folder.png" id="3_6tejy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42c2t"]
+size = Vector2(254.23933, 189.84186)
+
+[node name="Icon" type="Area2D" unique_id=1200596364]
+position = Vector2(-14.52002, -9.680023)
+script = ExtResource("1_3dybq")
+
+[node name="BackLight" type="Sprite2D" parent="." unique_id=641186055]
+scale = Vector2(6.3442163, 7.038127)
+texture = ExtResource("2_q2gxc")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=610880302]
+scale = Vector2(3.59, 3.59)
+texture = ExtResource("3_6tejy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=113245907]
+position = Vector2(0.2797165, 0.02406311)
+shape = SubResource("RectangleShape2D_42c2t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

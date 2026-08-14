@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bkhktu0apkwob"]
+
+[ext_resource type="Script" uid="uid://dmbo167o5eay5" path="res://gd/preload.gd" id="1_gmnvj"]
+
+[node name="Preload" type="Node2D" unique_id=226480156]
+script = ExtResource("1_gmnvj")

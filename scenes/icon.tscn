@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://oy187gircddf"]
+
+[ext_resource type="Script" uid="uid://cbsxq23nbw3lf" path="res://gd/icon.gd" id="1_3dybq"]
+[ext_resource type="Texture2D" uid="uid://fh85ih7ffxtm" path="res://content/twm/icons/icon_back_light.png" id="2_q2gxc"]
+[ext_resource type="Texture2D" uid="uid://cvvs366nqtvbq" path="res://content/twm/icons/folder.png" id="3_6tejy"]
+[ext_resource type="Script" uid="uid://bllecln815l76" path="res://gd/icon_state/icon_idle.gd" id="4_2fibp"]
+[ext_resource type="Script" uid="uid://dq2lb1gu8adm6" path="res://gd/icon_state/icon_hover.gd" id="5_d000p"]
+[ext_resource type="Script" uid="uid://cqugjn2mdhnq5" path="res://gd/icon_state/icon_drag.gd" id="6_8718u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42c2t"]
+size = Vector2(237.58507, 175.7861)
+
+[node name="Icon" type="Area2D" unique_id=1200596364 groups=["icon_group"]]
+modulate = Color(1, 1, 1, 0.39215687)
+script = ExtResource("1_3dybq")
+
+[node name="BackLightCopy" type="Sprite2D" parent="." unique_id=29785761]
+visible = false
+modulate = Color(1, 1, 1, 0.78431374)
+scale = Vector2(6.344, 7.038)
+texture = ExtResource("2_q2gxc")
+
+[node name="IconCopy" type="Sprite2D" parent="." unique_id=812072663]
+visible = false
+position = Vector2(0, -30)
+scale = Vector2(3.59, 3.59)
+texture = ExtResource("3_6tejy")
+
+[node name="BackLight" type="Sprite2D" parent="." unique_id=641186055]
+visible = false
+modulate = Color(1, 1, 1, 0.78431374)
+scale = Vector2(6.3442163, 7.038127)
+texture = ExtResource("2_q2gxc")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=610880302]
+position = Vector2(0, -30)
+scale = Vector2(3.59, 3.59)
+texture = ExtResource("3_6tejy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=113245907]
+shape = SubResource("RectangleShape2D_42c2t")
+
+[node name="Label" type="Label" parent="." unique_id=1313020798]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.12894
+offset_top = 37.051537
+offset_right = 119.52968
+offset_bottom = 69.05154
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "文档"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="IdleNode" type="Node" parent="." unique_id=159452642]
+script = ExtResource("4_2fibp")
+
+[node name="HoverNode" type="Node" parent="." unique_id=1255990210]
+script = ExtResource("5_d000p")
+
+[node name="DragNode" type="Node" parent="." unique_id=375231595]
+script = ExtResource("6_8718u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

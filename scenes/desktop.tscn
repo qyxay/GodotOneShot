@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cmma5pelhmfml"]
+
+[ext_resource type="Texture2D" uid="uid://d1ojnarhiyp04" path="res://content/twm/wallpaper/default.png" id="1_gl26t"]
+[ext_resource type="AudioStream" uid="uid://kuioj0hurxru" path="res://content/sfx/twm_mouse_click.wav" id="2_vcvwy"]
+[ext_resource type="AudioStream" uid="uid://ceux37soteg2w" path="res://content/sfx/twm_mouse_unclick.wav" id="3_nikxi"]
+[ext_resource type="PackedScene" uid="uid://c4nsdmemwqva5" path="res://scenes/mouse.tscn" id="4_q2hki"]
+[ext_resource type="PackedScene" uid="uid://oy187gircddf" path="res://scenes/icon.tscn" id="5_nd1jb"]
+[ext_resource type="Texture2D" uid="uid://cvvs366nqtvbq" path="res://content/twm/icons/folder.png" id="6_yhf0c"]
+[ext_resource type="Texture2D" uid="uid://bx67sw4ofpio3" path="res://content/twm/icons/oneshot.png" id="7_vxgxr"]
+[ext_resource type="Texture2D" uid="uid://du8lobhxavob7" path="res://content/twm/icons/photo.png" id="8_6r5gw"]
+[ext_resource type="Texture2D" uid="uid://dnng76fk0tq36" path="res://content/twm/icons/theme.png" id="9_3liqb"]
+[ext_resource type="Script" uid="uid://caqwfkjwi7fu8" path="res://gd/color_theme.gd" id="10_nikxi"]
+[ext_resource type="Texture2D" uid="uid://dgusxv5mwkf1q" path="res://content/twm/ui/mission.png" id="10_vcvwy"]
+
+[node name="Windows" type="Node2D" unique_id=167441217]
+
+[node name="Wallpaper" type="Sprite2D" parent="." unique_id=700526441]
+texture = ExtResource("1_gl26t")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=249431171]
+zoom = Vector2(0.675, 0.675)
+
+[node name="Icons" type="Node" parent="." unique_id=826235700]
+
+[node name="Folder" parent="Icons" unique_id=227331860 instance=ExtResource("5_nd1jb")]
+position = Vector2(-788.0048, -414.09525)
+texture = ExtResource("6_yhf0c")
+
+[node name="OneShot" parent="Icons" unique_id=1200596364 instance=ExtResource("5_nd1jb")]
+position = Vector2(-793, 12)
+icon_name = "Oneshot"
+texture = ExtResource("7_vxgxr")
+
+[node name="Photo" parent="Icons" unique_id=2043669598 instance=ExtResource("5_nd1jb")]
+position = Vector2(-792, 239)
+icon_name = "画廊"
+texture = ExtResource("8_6r5gw")
+
+[node name="Theme" parent="Icons" unique_id=1774367728 instance=ExtResource("5_nd1jb")]
+position = Vector2(-790.7616, -202.294)
+icon_name = "主题"
+texture = ExtResource("9_3liqb")
+
+[node name="Audio" type="Node" parent="." unique_id=86943390]
+
+[node name="MouseClick" type="AudioStreamPlayer2D" parent="Audio" unique_id=452474293]
+stream = ExtResource("2_vcvwy")
+
+[node name="MouseUnclick" type="AudioStreamPlayer2D" parent="Audio" unique_id=965705684]
+stream = ExtResource("3_nikxi")
+
+[node name="Mouse" parent="." unique_id=296546512 instance=ExtResource("4_q2hki")]
+z_index = 1
+
+[node name="ThemeColor" type="CanvasModulate" parent="." unique_id=867312015]
+script = ExtResource("10_nikxi")
+
+[node name="Mission" type="Sprite2D" parent="ThemeColor" unique_id=767303163]
+position = Vector2(0.11387169, 498.44574)
+scale = Vector2(1.4998951, 1.3844777)
+texture = ExtResource("10_vcvwy")

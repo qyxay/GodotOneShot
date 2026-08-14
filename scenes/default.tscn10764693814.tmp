@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cmma5pelhmfml"]
+
+[ext_resource type="Texture2D" uid="uid://d1ojnarhiyp04" path="res://content/default.png" id="1_e232d"]
+[ext_resource type="PackedScene" uid="uid://oy187gircddf" path="res://scenes/icon.tscn" id="4_ya6ni"]
+[ext_resource type="AudioStream" uid="uid://kuioj0hurxru" path="res://content/sfx/twm_mouse_click.wav" id="5_5vjm7"]
+[ext_resource type="PackedScene" uid="uid://c4nsdmemwqva5" path="res://scenes/mouse.tscn" id="5_6y2o2"]
+[ext_resource type="AudioStream" uid="uid://ceux37soteg2w" path="res://content/sfx/twm_mouse_unclick.wav" id="6_xprms"]
+
+[node name="Windows" type="Node2D" unique_id=167441217]
+
+[node name="Wallpaper" type="Sprite2D" parent="." unique_id=700526441]
+texture = ExtResource("1_e232d")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=249431171]
+zoom = Vector2(0.675, 0.675)
+
+[node name="MouseClick" type="AudioStreamPlayer2D" parent="." unique_id=1858020236]
+stream = ExtResource("5_5vjm7")
+
+[node name="MouseUnclick" type="AudioStreamPlayer2D" parent="." unique_id=1593760568]
+stream = ExtResource("6_xprms")
+
+[node name="Icon" parent="." unique_id=227331860 instance=ExtResource("4_ya6ni")]
+position = Vector2(157.84692, 173.81985)
+
+[node name="Icon2" parent="." unique_id=1200596364 instance=ExtResource("4_ya6ni")]
+position = Vector2(-450.08276, -137.77069)
+
+[node name="Icon3" parent="." unique_id=2043669598 instance=ExtResource("4_ya6ni")]
+position = Vector2(-405.21924, 144.84805)
+
+[node name="Icon4" parent="." unique_id=1774367728 instance=ExtResource("4_ya6ni")]
+position = Vector2(118.77777, -242.06476)
+
+[node name="Mouse" parent="." unique_id=296546512 instance=ExtResource("5_6y2o2")]
